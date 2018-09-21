@@ -1,5 +1,4 @@
 var fs = require('fs');
-
 //   All synchronous (or blocking) filesystem methods in the fs module end with  
 //   'Sync'. To read a file, you'll need to use  
 //   fs.readFileSync('/path/to/file'). This method will return a Buffer object  
@@ -13,10 +12,11 @@ var path = process.argv[2];
 // reads file into a buffer object
 var buf = fs.readFileSync(path);
 // converts buffer object to string
-var file = buf.toString()
+var file = buf.toString();
 
 var lines = file.split('\n');
 
-var numLines = lines.length + 1;
+var numLines = lines.length - 1;
 
+//console.log(lines);
 console.log(numLines);
