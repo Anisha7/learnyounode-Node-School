@@ -1,6 +1,6 @@
 // modules needed
 
-var module6 = require('./module6.js');
+var module6 = require('./module6');
 
 // variables
 // get the directory path 
@@ -15,10 +15,10 @@ function printFiles(errorBool, filteredFiles) {
     if (errorBool != null) {
         console.log(err);
     } else {
-        for (var i = 0; i < filteredFiles.length; i++ ) {
-            var file = filteredFiles[i];
+        filteredFiles.forEach(file => {
             console.log(file);
-        }
+        });
+        
     }
 }
 

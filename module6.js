@@ -16,16 +16,14 @@ module.exports = function (dir, file_ext, callback) {
             return callback(err, filteredFiles);
         } else {
             // parse through files to find the ones with the right extensions
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                
+            files.forEach(file => {
                 // check if it is the file we want
                 if (path.extname(file) === file_ext) {
                     // add found file to filtered files
                     filteredFiles.push(file);
                     
                 }
-            }
+            })
             // print files
             callback(null, filteredFiles);
         }
