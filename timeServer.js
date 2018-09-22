@@ -32,13 +32,6 @@ var server = net.createServer(function (socket) {
     var data = strftime('%B %d, %Y %H:%M');
     var data = strftime('%Y-%m-%d %H:%M');
 
-    // write date to socket
-    // socket.write(data, ['utf8'], function callback() {
-    //     // end socket
-    //     console.log("");
-    //     socket.end("");
-    // })
-
     socket.end(data + '\n');
     
   });
